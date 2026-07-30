@@ -9,7 +9,7 @@ export default function ImageFrame({src="", frameSrc="", width= 64, height=64}) 
         <NineSliceFrame
             imagePath={frameSrc}
             slice={4}
-            borderWidth={40}
+            borderWidth={15}
             repeat="repeat"
             fill
             pixelated

@@ -4,12 +4,24 @@
   --font-capriola: "Capriola", ui-sans-serif, sans-serif;
   --font-creepster: "Creepster", cursive;
   --font-pixelify: "Pixelify Sans", ui-sans-serif, sans-serif;
+  --color-violet-1: #baa7d9 ;
+  --color-violet-2: #a494be ;
+  --color-violet-3: #9083a5 ;
+  --color-violet-4: #776c8a ;
+  --color-violet-5: #645b75 ;
+  --color-violet-6: #504860 ;
+  --color-green-1: #baa7d9 ;
+  --color-green-2: #274f57 ;
+  --color-green-3: #24525b ;
+  --color-green-4: #367a6e ;
+  --color-green-5: #4ca180 ;
+  --color-green-6: #5ebb97 ;
+
 }
 
 * {
   box-sizing: border-box;
   font-family: "Pixelify Sans";
-  color: #776c8a;
 }
 
 html,
@@ -22,36 +34,3 @@ body {
   margin: 0;
 }
 
-color1 {
-  color: #baa7d9;
-}
-
-color2 {
-  color: #a494be;
-}
-
-color3 {
-  color: #9083a5;
-}
-
-color4 {
-  color: #776c8a;
-}
-color5 {
-  color: #645b75;
-}
-color6 {
-  color: #504860;
-}
-
-a {
-  color: #504860;
-  border-color: #a494be;
-  background-color: #baa7d9;
-}
-
-a.hover {
-  color: #baa7d9;
-  border-color: #a494be;
-  background-color: #504860;
-}

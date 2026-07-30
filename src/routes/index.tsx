@@ -35,14 +35,14 @@ function Home() {
 
   return (
     <div className="">
-      <section id="hero" className="flex flex-col">
+      <section id="hero" className="flex flex-col text-violet-3">
         <TiledSection
-          tileSrc="/wall1.png"
+          tileSrc="/violet/wall1.png"
           scale={3}
           className="h-screen w-full flex items-center justify-center flex-col p-4 space-y-5"
         >
           <NineSliceFrame
-            imagePath="/box2.png"
+            imagePath="/violet/box2.png"
             slice={12}
             borderWidth={40}
             repeat="repeat"
@@ -54,14 +54,14 @@ function Home() {
               <h1 className="text-xl">Hey there</h1>
               <p>
                 My name is Joko26 and im a{" "}
-                <span style={{ color: "#baa7d9" }}>{age}yr</span> old gamedev
+                <span className="text-violet-1">{age}yr</span> old gamedev
                 and programmer. i mostly use Typescript and React but currently
                 im learning Rust.
               </p>
             </div>
           </NineSliceFrame>
           <NineSliceFrame
-            imagePath="/box2.png"
+            imagePath="/violet/box2.png"
             slice={12}
             borderWidth={40}
             repeat="repeat"
@@ -76,7 +76,7 @@ function Home() {
                 }}
               >
                 <NineSliceFrame
-                  imagePath="/button1.png"
+                  imagePath="/violet/button1.png"
                   slice={12}
                   borderWidth={40}
                   repeat="repeat"
@@ -84,7 +84,7 @@ function Home() {
                   pixelated
                   className="h-full w-full"
                 >
-                  <p className="p-4" style={{ color: "#a494be" }}>
+                  <p className="p-4 text-violet-2">
                     Projects
                   </p>
                 </NineSliceFrame>
@@ -95,7 +95,7 @@ function Home() {
                 }}
               >
                 <NineSliceFrame
-                  imagePath="/button1.png"
+                  imagePath="/violet/button1.png"
                   slice={12}
                   borderWidth={40}
                   repeat="repeat"
@@ -103,7 +103,7 @@ function Home() {
                   pixelated
                   className="h-full w-full"
                 >
-                  <p className="p-4" style={{ color: "#a494be" }}>
+                  <p className="p-4 text-violet-2">
                     About
                   </p>
                 </NineSliceFrame>
@@ -112,15 +112,15 @@ function Home() {
           </NineSliceFrame>
         </TiledSection>
       </section>
-      <section id="projects">
+      <section id="projects"className="text-green-3">
         {" "}
         <TiledSection
-          tileSrc="/wall2.png"
+          tileSrc="/green/wall2.png"
           scale={3}
           className="h-screen w-full flex items-center justify-center flex-col p-4 space-y-5"
         >
           <NineSliceFrame
-            imagePath="/box2.png"
+            imagePath="/green/box2.png"
             slice={12}
             borderWidth={40}
             repeat="repeat"
@@ -129,32 +129,48 @@ function Home() {
             className="h-fit w-full"
           >
             {" "}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-5 gap-5 items-center justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start p-5 gap-5 gap-y-15 ">
               {projects.map((project, id) => {
-                const frameNumber = getRandomInt(1, 3)
+                const frameNumber = getRandomInt(1, 3);
 
                 return (
                   <NineSliceFrame
-                    imagePath="/box1.png"
+                    imagePath="/green/box1.png"
                     slice={12}
                     borderWidth={40}
                     repeat="repeat"
                     fill
                     pixelated
-                    className="h-full w-full flex items-center justify-center flex-col p-4 space-y-10 "
+                    className="flex flex-col items-center justify-center p-4 space-y-20"
                     key={id}
                   >
-                    <div className="">
-                      <ImageFrame src={project?.[1].img} frameSrc={`/frame${frameNumber}.png`} ></ImageFrame>
-                      <div>
-                        <h1 className="text-3xl" style={{ color: "#a494be" }}>{project?.[1].name}</h1>
+                    <div className="flex items-center justify-center flex-col ">
+                      <ImageFrame
+                        src={project?.[1].img}
+                        frameSrc={`/green/frame${frameNumber}.png`}
+                      ></ImageFrame>
+                      <div className="flex-grow">
+                        <h1 className="text-3xl" style={{ color: "#5ab390" }}>
+                          {project?.[1].name}
+                        </h1>
                         <p className="text-xl">{project?.[1].desc}</p>
                       </div>
                       <div className="flex flex-row items-center justify-center space-x-5">
                         {Object.entries(project[1]?.links).map((link, id) => {
                           return (
-                            <a key={id} className="border-2 rounded-md" href={link?.[1]}>{link?.[0]}</a>
-                          )
+                            <a key={id} className="" href={link?.[1]}>
+                              <NineSliceFrame
+                                imagePath="/green/button1.png"
+                                slice={5}
+                                borderWidth={15}
+                                repeat="repeat"
+                                fill
+                                pixelated
+                              >
+                                <p className="p-4">{link?.[0]}</p>
+                              </NineSliceFrame>
+                            </a>
+                          );
                         })}
                       </div>
                     </div>
@@ -168,7 +184,7 @@ function Home() {
       <section id="about">
         {" "}
         <TiledSection
-          tileSrc="/wall1.png"
+          tileSrc="/green/wall1.png"
           scale={3}
           className="h-screen w-full flex items-center justify-center flex-col p-4 space-y-5"
         ></TiledSection>
