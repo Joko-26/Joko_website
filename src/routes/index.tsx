@@ -7,6 +7,7 @@ import ImageFrame from "#/components/imageFrame";
 
 import projectsData from "#/json/projects.json";
 import { getRandomInt } from "#/utils";
+import ContactForm from "#/components/contactForm";
 
 export const Route = createFileRoute("/")({ component: Home });
 
@@ -48,15 +49,15 @@ function Home() {
             repeat="repeat"
             fill
             pixelated
-            className="h-64 w-64"
+            className="h-fit w-fit"
           >
             <div className="p-5">
               <h1 className="text-xl">Hey there</h1>
               <p>
                 My name is Joko26 and im a{" "}
-                <span className="text-violet-1">{age}yr</span> old gamedev
-                and programmer. i mostly use Typescript and React but currently
-                im learning Rust.
+                <span className="text-violet-1">{age}yr</span> old gamedev and
+                programmer. i mostly use Typescript and React but currently im
+                learning Rust.
               </p>
             </div>
           </NineSliceFrame>
@@ -67,8 +68,9 @@ function Home() {
             repeat="repeat"
             fill
             pixelated
-            className="h-64 w-64 flex items-center justify-center"
+            className="h-fit w-fit flex items-center justify-center flex-col p-6 gap-3"
           >
+            <h1 className="text-4xl text-violet-1">Overview</h1>
             <div className="flex flex-col items-center justify-center space-y-5">
               <button
                 onClick={() => {
@@ -84,9 +86,7 @@ function Home() {
                   pixelated
                   className="h-full w-full"
                 >
-                  <p className="p-4 text-violet-2">
-                    Projects
-                  </p>
+                  <p className="p-4 text-violet-2">Projects</p>
                 </NineSliceFrame>
               </button>
               <button
@@ -103,16 +103,31 @@ function Home() {
                   pixelated
                   className="h-full w-full"
                 >
-                  <p className="p-4 text-violet-2">
-                    About
-                  </p>
+                  <p className="p-4 text-violet-2">About</p>
+                </NineSliceFrame>
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection("contact");
+                }}
+              >
+                <NineSliceFrame
+                  imagePath="/violet/button1.png"
+                  slice={12}
+                  borderWidth={40}
+                  repeat="repeat"
+                  fill
+                  pixelated
+                  className="h-full w-full"
+                >
+                  <p className="p-4 text-violet-2">Contact me</p>
                 </NineSliceFrame>
               </button>
             </div>
           </NineSliceFrame>
         </TiledSection>
       </section>
-      <section id="projects"className="text-green-3">
+      <section id="projects" className="text-green-3">
         {" "}
         <TiledSection
           tileSrc="/green/wall2.png"
@@ -120,16 +135,28 @@ function Home() {
           className="h-screen w-full flex items-center justify-center flex-col p-4 space-y-5"
         >
           <NineSliceFrame
+            imagePath="/green/box1.png"
+            slice={12}
+            borderWidth={40}
+            repeat="repeat"
+            fill
+            pixelated
+            className="h-fit w-full flex items-center justify-center p-1"
+          >
+            <h1 className="text-6xl text-green-1">Projects</h1>
+          </NineSliceFrame>
+
+          <NineSliceFrame
             imagePath="/green/box2.png"
             slice={12}
             borderWidth={40}
             repeat="repeat"
             fill
             pixelated
-            className="h-fit w-full"
+            className="h-fit w-full overflow-y-scroll sm:overflow-y-hidden lg:overflow-y-hidden"
           >
             {" "}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start p-5 gap-5 gap-y-15 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start p-5 gap-5 ">
               {projects.map((project, id) => {
                 const frameNumber = getRandomInt(1, 3);
 
@@ -141,7 +168,7 @@ function Home() {
                     repeat="repeat"
                     fill
                     pixelated
-                    className="flex flex-col items-center justify-center p-4 space-y-20"
+                    className="flex flex-col items-center justify-center p-4 space-y-20 h-full"
                     key={id}
                   >
                     <div className="flex items-center justify-center flex-col ">
@@ -182,12 +209,81 @@ function Home() {
         </TiledSection>
       </section>
       <section id="about">
-        {" "}
         <TiledSection
-          tileSrc="/green/wall1.png"
+          tileSrc="/blue/wall1.png"
           scale={3}
-          className="h-screen w-full flex items-center justify-center flex-col p-4 space-y-5"
-        ></TiledSection>
+          className="h-screen w-full flex items-center justify-center flex-col p-4 space-y-5 text-blue-3"
+        >
+          <NineSliceFrame
+            imagePath="/blue/box1.png"
+            slice={12}
+            borderWidth={40}
+            repeat="repeat"
+            fill
+            pixelated
+            className="h-fit w-full flex items-center justify-center p-1"
+          >
+            <h1 className="text-6xl text-blue-1">About</h1>
+          </NineSliceFrame>
+          <NineSliceFrame
+            imagePath="/blue/box2.png"
+            slice={12}
+            borderWidth={40}
+            repeat="repeat"
+            fill
+            pixelated
+            className="h-fit w-full flex items-center justify-center p-1"
+          >
+            <div></div>
+          </NineSliceFrame>
+        </TiledSection>
+      </section>
+      <section id="contact">
+        <TiledSection
+          tileSrc="/red/wall2.png"
+          scale={3}
+          className="h-screen w-full flex items-center justify-center flex-col p-4 space-y-5 text-red-3"
+        >
+          {" "}
+          <NineSliceFrame
+            imagePath="/red/box1.png"
+            slice={12}
+            borderWidth={40}
+            repeat="repeat"
+            fill
+            pixelated
+            className="h-fit w-full flex items-center justify-center p-1"
+          >
+            <h1 className="text-6xl text-red-1">Contact me</h1>
+          </NineSliceFrame>
+          <div className="flex flex-row w-full h-full p-3 gap-4">
+            <NineSliceFrame
+              imagePath="/red/box2.png"
+              slice={12}
+              borderWidth={40}
+              repeat="repeat"
+              fill
+              pixelated
+              className="h-ful w-full flex items-center justify-center p-1"
+            ></NineSliceFrame>
+            <NineSliceFrame
+              imagePath="/red/box2.png"
+              slice={12}
+              borderWidth={40}
+              repeat="repeat"
+              fill
+              pixelated
+              className="h-fit w-full flex flex-col items-center justify-center p-7"
+            >
+              {" "}
+              <h1 className="text-4xl text-red-1">Send me a message</h1>
+              <ContactForm
+                url="https://discord.com/api/webhooks/1532811136775360833/ptFd6zQCLuHfSw2Dc9vwS_rJJReXmyRrLRKb8WxE4PkMfvHrj2SDPTeZMNNLkEJOnYb_"
+                color="red"
+              />
+            </NineSliceFrame>
+          </div>
+        </TiledSection>
       </section>
     </div>
   );

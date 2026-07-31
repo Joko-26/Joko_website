@@ -4,19 +4,30 @@
   --font-capriola: "Capriola", ui-sans-serif, sans-serif;
   --font-creepster: "Creepster", cursive;
   --font-pixelify: "Pixelify Sans", ui-sans-serif, sans-serif;
-  --color-violet-1: #baa7d9 ;
-  --color-violet-2: #a494be ;
-  --color-violet-3: #9083a5 ;
-  --color-violet-4: #776c8a ;
-  --color-violet-5: #645b75 ;
-  --color-violet-6: #504860 ;
-  --color-green-1: #baa7d9 ;
-  --color-green-2: #274f57 ;
-  --color-green-3: #24525b ;
-  --color-green-4: #367a6e ;
-  --color-green-5: #4ca180 ;
-  --color-green-6: #5ebb97 ;
-
+  --color-violet-1: #baa7d9;
+  --color-violet-2: #a494be;
+  --color-violet-3: #9083a5;
+  --color-violet-4: #776c8a;
+  --color-violet-5: #645b75;
+  --color-violet-6: #504860;
+  --color-green-1: #18363c;
+  --color-green-2: #274f57;
+  --color-green-3: #24525b;
+  --color-green-4: #367a6e;
+  --color-green-5: #4ca180;
+  --color-green-6: #5ebb97;
+  --color-blue-1: #3d4870;
+  --color-blue-2: #4c5a8d;
+  --color-blue-3: #5275a3;
+  --color-blue-4: #5c87be;
+  --color-blue-5: #5c90d4;
+  --color-blue-6: #5c97e4;
+  --color-red-1: #6b304b;
+  --color-red-2: #853a5c;
+  --color-red-3: #b34947;
+  --color-red-4: #cb5452;
+  --color-red-5: #cf724a;
+  --color-red-6: #e77f53;
 }
 
 * {
@@ -33,4 +44,3 @@ body,
 body {
   margin: 0;
 }
-
