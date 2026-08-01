@@ -44,3 +44,8 @@ body,
 body {
   margin: 0;
 }
+
+.scrollbar::-webkit-scrollbar {
+  background: #e77f53;
+  padding: 2px;
+}

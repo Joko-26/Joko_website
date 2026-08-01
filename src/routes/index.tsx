@@ -2,18 +2,22 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { TiledSection } from "#/components/tiledSection";
 import { NineSliceFrame } from "@nine-slice-frame/react";
+
 import {} from "#/components/tiledSection";
 import ImageFrame from "#/components/imageFrame";
-
-import projectsData from "#/json/projects.json";
 import { getRandomInt } from "#/utils";
 import ContactForm from "#/components/contactForm";
+
+import projectsData from "#/json/projects.json";
+import contactsData from "#/json/contacts.json";
 
 export const Route = createFileRoute("/")({ component: Home });
 
 function Home() {
   const [age, setAge] = useState("");
+
   const projects = Object.entries(projectsData?.projects);
+  const contacts = Object.entries(contactsData?.contacts);
 
   const scrollToSection = (sectionIn: string) => {
     const section = document.getElementById(sectionIn);
@@ -153,7 +157,7 @@ function Home() {
             repeat="repeat"
             fill
             pixelated
-            className="h-fit w-full overflow-y-scroll sm:overflow-y-hidden lg:overflow-y-hidden"
+            className="h-fit w-full overflow-y-scroll sm:overflow-y-hidden "
           >
             {" "}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start p-5 gap-5 ">
@@ -256,7 +260,7 @@ function Home() {
           >
             <h1 className="text-6xl text-red-1">Contact me</h1>
           </NineSliceFrame>
-          <div className="flex flex-row w-full h-full p-3 gap-4">
+          <div className="flex flex-col w-full h-full p-3 gap-4 md:flex-row">
             <NineSliceFrame
               imagePath="/red/box2.png"
               slice={12}
@@ -264,8 +268,42 @@ function Home() {
               repeat="repeat"
               fill
               pixelated
-              className="h-ful w-full flex items-center justify-center p-1"
-            ></NineSliceFrame>
+              className="h-fit w-full flex items-center justify-center p-1"
+            >
+              <div className="flex flex-col items-center justify-center gap-3 p-5 w-full h-fit">
+                {contacts.map((contact, id) => {
+                  const frameNumber = getRandomInt(1, 3);
+
+                  return (
+                    <NineSliceFrame
+                      key={id}
+                      imagePath="/red/box1.png"
+                      slice={12}
+                      borderWidth={40}
+                      repeat="repeat"
+                      fill
+                      pixelated
+                      className="flex items-center flex-row p-4 w-full h-full"
+                    >
+                      <ImageFrame src={contact?.[1].icon} frameSrc={`/red/frame${frameNumber}.png`} height={10} width={10}/>
+                      <h1 className="flex text-red-2 justify-self-center">{contact?.[1].name}</h1>
+                      <a className="flex justify-self-end" href={contact?.[1].link}>
+                        <NineSliceFrame
+                          imagePath="/red/button1.png"
+                          slice={5}
+                          borderWidth={15}
+                          repeat="repeat"
+                          fill
+                          pixelated
+                        >
+                          <p className="p-4 text-red-1">Open</p>
+                        </NineSliceFrame>
+                      </a>
+                    </NineSliceFrame>
+                  );
+                })}
+              </div>
+            </NineSliceFrame>
             <NineSliceFrame
               imagePath="/red/box2.png"
               slice={12}
@@ -281,6 +319,7 @@ function Home() {
                 url="https://discord.com/api/webhooks/1532811136775360833/ptFd6zQCLuHfSw2Dc9vwS_rJJReXmyRrLRKb8WxE4PkMfvHrj2SDPTeZMNNLkEJOnYb_"
                 color="red"
               />
+              <h1>Im really excited for your messages (/≧▽≦)/</h1>
             </NineSliceFrame>
           </div>
         </TiledSection>
