@@ -16,8 +16,8 @@ export const Route = createFileRoute("/")({ component: Home });
 function Home() {
   const [age, setAge] = useState("");
 
-  const projects = Object.entries(projectsData?.projects);
-  const contacts = Object.entries(contactsData?.contacts);
+  const projects = projectsData?.projects
+  const contacts = contactsData?.contacts
 
   const scrollToSection = (sectionIn: string) => {
     const section = document.getElementById(sectionIn);
@@ -157,7 +157,7 @@ function Home() {
             repeat="repeat"
             fill
             pixelated
-            className="h-fit w-full overflow-y-scroll sm:overflow-y-hidden "
+            className="h-fit w-full overflow-y-scroll scrollbar-green-3"
           >
             {" "}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start p-5 gap-5 ">
@@ -177,19 +177,21 @@ function Home() {
                   >
                     <div className="flex items-center justify-center flex-col ">
                       <ImageFrame
-                        src={project?.[1].img}
+                        src={project.img}
                         frameSrc={`/green/frame${frameNumber}.png`}
+                        className="w-50 h-50"
+                        img_classname="w-50 h-50 p-5"
                       ></ImageFrame>
                       <div className="flex-grow">
                         <h1 className="text-3xl" style={{ color: "#5ab390" }}>
-                          {project?.[1].name}
+                          {project?.name}
                         </h1>
-                        <p className="text-xl">{project?.[1].desc}</p>
+                        <p className="text-xl">{project?.desc}</p>
                       </div>
                       <div className="flex flex-row items-center justify-center space-x-5">
-                        {Object.entries(project[1]?.links).map((link, id) => {
+                        {Object.entries(project?.links).map((link, id) => {
                           return (
-                            <a key={id} className="" href={link?.[1]}>
+                            <a key={id} className="" href={link[0]}>
                               <NineSliceFrame
                                 imagePath="/green/button1.png"
                                 slice={5}
@@ -246,7 +248,7 @@ function Home() {
         <TiledSection
           tileSrc="/red/wall2.png"
           scale={3}
-          className="h-screen w-full flex items-center justify-center flex-col p-4 space-y-5 text-red-3"
+          className="h-screen w-full flex items-center justify-center flex-col p-4 space-y-5 text-red-3 overflow-y-scroll scrollbar-red-3"
         >
           {" "}
           <NineSliceFrame
@@ -256,11 +258,12 @@ function Home() {
             repeat="repeat"
             fill
             pixelated
-            className="h-fit w-full flex items-center justify-center p-1"
+            className="h-fit w-full flex items-center justify-center mt-44 p-5"
           >
             <h1 className="text-6xl text-red-1">Contact me</h1>
           </NineSliceFrame>
-          <div className="flex flex-col w-full h-full p-3 gap-4 md:flex-row">
+          
+          <div className="flex flex-col w-full h-full p-3 gap-4 lg:flex-row">
             <NineSliceFrame
               imagePath="/red/box2.png"
               slice={12}
@@ -283,11 +286,13 @@ function Home() {
                       repeat="repeat"
                       fill
                       pixelated
-                      className="flex items-center flex-row p-4 w-full h-full"
+                      className="flex  items-center flex-row p-4 w-full h-fit justify-between"
                     >
-                      <ImageFrame src={contact?.[1].icon} frameSrc={`/red/frame${frameNumber}.png`} height={10} width={10}/>
-                      <h1 className="flex text-red-2 justify-self-center">{contact?.[1].name}</h1>
-                      <a className="flex justify-self-end" href={contact?.[1].link}>
+                      <div className="max-w-40 max-h-40 ">
+                      <ImageFrame src={contact?.icon} frameSrc={`/red/frame${frameNumber}.png`} className="w-40 h-40" img_classname="w-40 h-40 p-5"/>                        
+                      </div>
+                      <h1 className=" text-red-2 text-lg lg:text-5xl">{contact?.name}</h1>
+                      <a className="" href={contact?.link}>
                         <NineSliceFrame
                           imagePath="/red/button1.png"
                           slice={5}
@@ -295,6 +300,7 @@ function Home() {
                           repeat="repeat"
                           fill
                           pixelated
+                          className="ml-3"
                         >
                           <p className="p-4 text-red-1">Open</p>
                         </NineSliceFrame>
@@ -311,7 +317,7 @@ function Home() {
               repeat="repeat"
               fill
               pixelated
-              className="h-fit w-full flex flex-col items-center justify-center p-7"
+              className="h-fit w-full flex flex-col items-center justify-center p-7 mb-7"
             >
               {" "}
               <h1 className="text-4xl text-red-1">Send me a message</h1>

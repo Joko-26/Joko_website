@@ -1,24 +1,29 @@
 {
-    "contacts": {
-        "discord": {
-            "name": "Discord",
-            "icon": "/logo192.png",
-            "link": "https://discordapp.com/users/1012708316973117491"            
-        },
-        "slack": {
-            "name": "Slack",
-            "icon": "/logo192.png",
-            "link": "https://hackclub.enterprise.slack.com/team/U0A5GJ8JP5F"            
-        },
-        "instagramm": {
-            "name": "instagram",
-            "icon": "/logo192.png",
-            "link": "https://www.instagram.com/jokoone26/"            
-        },
-        "bluesky": {
-            "name": "Bluesky",
-            "icon": "/logo192.png",
-            "link": "https://bsky.app/profile/joko-26.bsky.social"            
-        }
+  "contacts": [
+    {
+      "name": "Discord",
+      "icon": "/icons/discord.png",
+      "link": "https://discordapp.com/users/1012708316973117491"
+    },
+    {
+      "name": "Github",
+      "icon": "/icons/github.png",
+      "link": "https://hackclub.enterprise.slack.com/team/U0A5GJ8JP5F"
+    },
+    {
+      "name": "Slack",
+      "icon": "/icons/slack.png",
+      "link": "https://hackclub.enterprise.slack.com/team/U0A5GJ8JP5F"
+    },
+    {
+      "name": "instagram",
+      "icon": "/icons/instagramm.png",
+      "link": "https://www.instagram.com/jokoone26/"
+    },
+    {
+      "name": "Bluesky",
+      "icon": "/icons/bluesky.png",
+      "link": "https://bsky.app/profile/joko-26.bsky.social"
     }
+  ]
 }

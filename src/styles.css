@@ -45,7 +45,21 @@ body {
   margin: 0;
 }
 
-.scrollbar::-webkit-scrollbar {
-  background: #e77f53;
-  padding: 2px;
+.scrollbar-violet::-webkit-scrollbar {
+  background: var(--color-violet-3);
+}
+
+.scrollbar-green::-webkit-scrollbar {
+  background: var(--color-green-3);
+}
+.scrollbar-blue::-webkit-scrollbar {
+  background: var(--color-blue-3);
+}
+.scrollbar-red::-webkit-scrollbar {
+  background: var(--color-red-3);
+}
+
+@utility scrollbar-* {
+  scrollbar-color: --value(--color-*) transparent
+  
 }

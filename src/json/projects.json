@@ -1,6 +1,6 @@
 {
-  "projects": {
-    "QR-Code creator": {
+  "projects": [
+    {
       "desc": "Create QR-Codes online for free and customize them as you like.",
       "img": "https://orosemo.de/games-tools/qr-code-gen-logo.png",
       "name": "QR-Code creator",
@@ -9,7 +9,7 @@
         "Website": "https://qrcode-creator.orosemo.de/"
       }
     },
-    "Jam Management Discord Bot": {
+    {
       "desc": "Manage Jams (competitions) in your discord servers very easily.",
       "img": "https://orosemo.de/games-tools/jam-bot-logo.png",
       "name": "Jam Management Discord Bot",
@@ -18,7 +18,7 @@
         "Try it!": "https://discord.com/oauth2/authorize?client_id=1392135407612723390"
       }
     },
-    "Flavorcode": {
+    {
       "desc": "Flavorcode is a Flavortown VS-Code extension (flavortown has endet :( )",
       "img": "https://github.com/Orosemo/flavorcode/raw/master/media/logo.png",
       "name": "Flavorcode",
@@ -27,5 +27,5 @@
         "Try it!": "https://marketplace.visualstudio.com/items?itemName=Orosemo.flavorcode"
       }
     }
-  }
+  ]
 }

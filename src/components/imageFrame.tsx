@@ -2,7 +2,7 @@
 import { NineSliceFrame } from "@nine-slice-frame/react";
 import type React from "react";
 
-export default function ImageFrame({src="", frameSrc="", width= 64, height=64, fill=false}) {
+export default function ImageFrame({src="", frameSrc="", className="", img_classname=""}) {
 
 
     return (
@@ -13,9 +13,9 @@ export default function ImageFrame({src="", frameSrc="", width= 64, height=64, f
             repeat="repeat"
             fill
             pixelated
-            className={fill ? `h-${height} w-${width}` : "h-fill w-fill"}
+            className={className}
           >
-            <img src={src} alt={src} className={fill ? `h-${height} w-${width} p-10` : "h-fill w-fill p-10"}/>
+            <img src={src} alt={src} className={img_classname}/>
           </NineSliceFrame>
     )
 }
