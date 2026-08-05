@@ -1,0 +1,86 @@
+{
+  "games": [
+    {
+      "name": "Valorant",
+      "img": "/external-logos/valorant.png",
+      "rating": 1,
+      "link": "https://playvalorant.com/"
+    },
+    {
+      "name": "Minecraft",
+      "img": "/external-logos/minecraft.jpg",
+      "rating": 2,
+      "link": "https://www.minecraft.net/"
+    },
+    {
+      "name": "Satisfactory",
+      "img": "/external-logos/satisfactory.png",
+      "rating": 4,
+      "link": "https://store.steampowered.com/app/526870/Satisfactory/"
+    },
+    {
+      "name": "Eldenring",
+      "img": "/external-logos/eldenring.jpg",
+      "rating": 5,
+      "link": "https://store.steampowered.com/app/1245620/ELDEN_RING/"
+    }
+  ],
+  "tools": [
+    {
+      "name": "Python",
+      "img": "https://skillicons.dev/icons?i=py",
+      "link": "https://www.python.org/"
+    },
+    {
+      "name": "Typescript",
+      "img": "https://skillicons.dev/icons?i=ts",
+      "link": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "Tailwind",
+      "img": "https://skillicons.dev/icons?i=tailwind",
+      "link": "https://tailwindcss.com/"
+    },
+    {
+      "name": "Rust",
+      "img": "https://skillicons.dev/icons?i=rust",
+      "link": "https://rust-lang.org/"
+    },
+    {
+      "name": "Godot",
+      "img": "https://skillicons.dev/icons?i=godot",
+      "link": "https://godotengine.org/de/"
+    },
+    {
+      "name": "Asesprite",
+      "img": "/external-logos/aseprite.png",
+      "link": "https://www.aseprite.org/"
+    },
+    {
+      "name": "Git",
+      "img": "https://skillicons.dev/icons?i=git",
+      "link": "https://git-scm.com/"
+    },
+    {
+      "name": "React",
+      "img": "https://skillicons.dev/icons?i=react",
+      "link": "https://react.dev/"
+    }
+  ],
+  "songs": [
+    "https://open.spotify.com/embed/track/29GTiwycGTz60NePCEj8Qk?utm_source=generator&si=b0f6491e45b7443f",
+    "https://open.spotify.com/embed/track/6MknWxVxaShYEmx2BEaWZk?utm_source=generator&si=8133a8f137b0407c",
+    "https://open.spotify.com/embed/track/2vNX19MsEKfdfBzwWSMU2W?utm_source=generator&si=fd03c71ac9884a81",
+    "https://open.spotify.com/embed/track/1atUX5yDsZpz82R6B55UEP?utm_source=generator&si=2b6047aebc534108",
+    "https://open.spotify.com/embed/track/0AND941e6iXUJq3XMcBkLf?utm_source=generator&si=e3be5dd56518456d",
+    "https://open.spotify.com/embed/track/40NjASTBlqkyCZ9bPVDcMK?utm_source=generator&si=b5e21d38d4f243f1"
+  ],
+
+  "rating": {
+    "1": "absolutely addicted",
+    "2": "crazy fan",
+    "3": "big fan",
+    "4": "playing sometimes",
+    "5": "why is this even on here?"
+  }
+}

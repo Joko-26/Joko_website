@@ -10,14 +10,15 @@ import ContactForm from "#/components/contactForm";
 
 import projectsData from "#/json/projects.json";
 import contactsData from "#/json/contacts.json";
+import aboutData from "#/json/about.json";
 
 export const Route = createFileRoute("/")({ component: Home });
 
 function Home() {
   const [age, setAge] = useState("");
 
-  const projects = projectsData?.projects
-  const contacts = contactsData?.contacts
+  const projects = projectsData?.projects;
+  const contacts = contactsData?.contacts;
 
   const scrollToSection = (sectionIn: string) => {
     const section = document.getElementById(sectionIn);
@@ -44,7 +45,7 @@ function Home() {
         <TiledSection
           tileSrc="/violet/wall1.png"
           scale={3}
-          className="h-screen w-full flex items-center justify-center flex-col p-4 space-y-5"
+          className="h-fit w-full min-h-screen flex items-center justify-center flex-col p-4 space-y-5"
         >
           <NineSliceFrame
             imagePath="/violet/box2.png"
@@ -53,7 +54,7 @@ function Home() {
             repeat="repeat"
             fill
             pixelated
-            className="h-fit w-fit"
+            className="h-fit w-fit "
           >
             <div className="p-5">
               <h1 className="text-xl">Hey there</h1>
@@ -218,7 +219,7 @@ function Home() {
         <TiledSection
           tileSrc="/blue/wall1.png"
           scale={3}
-          className="h-screen w-full flex items-center justify-center flex-col p-4 space-y-5 text-blue-3"
+          className="h-fit w-full min-h-screen flex items-center justify-center flex-col p-4 space-y-5 text-blue-3 "
         >
           <NineSliceFrame
             imagePath="/blue/box1.png"
@@ -227,7 +228,7 @@ function Home() {
             repeat="repeat"
             fill
             pixelated
-            className="h-fit w-full flex items-center justify-center p-1"
+            className="h-fit w-full max-box flex items-center justify-center p-1"
           >
             <h1 className="text-6xl text-blue-1">About</h1>
           </NineSliceFrame>
@@ -238,9 +239,164 @@ function Home() {
             repeat="repeat"
             fill
             pixelated
-            className="h-fit w-full flex items-center justify-center p-1"
+            className="h-fit w-full flex items-center justify-center p-1 overflow-y-scroll scrollbar-blue-3"
           >
-            <div></div>
+            <div className="flex flex-col items-center justify-center m-3 w-full">
+              <div className="flex flex-col w-full m-2">
+                <NineSliceFrame
+                  imagePath="/blue/box1.png"
+                  slice={12}
+                  borderWidth={40}
+                  repeat="repeat"
+                  fill
+                  pixelated
+                  className="h-fit w-full flex items-center justify-center p-5 w-full h-fit "
+                >
+                  <h1 className="text-4xl text-blue-1">
+                    Hey as said before on the landing page, my name is Joko26
+                    and im a 16yr old programmer from Germany. <br /> I really
+                    enjoy making pixelart, playing games, making games and of
+                    course programming.
+                  </h1>
+                </NineSliceFrame>
+              </div>
+              <div className="flex flex-col flex-1 w-full md:flex-row space-x-4 justify-between">
+                <div className="flex flex-col flex-1">
+                  <NineSliceFrame
+                    imagePath="/blue/box2.png"
+                    slice={12}
+                    borderWidth={40}
+                    repeat="repeat"
+                    fill
+                    pixelated
+                    className="h-fit w-full flex-1 flex-col items-center p-5 mb-3"
+                  >
+                    <h1 className="text-4xl text-blue-1 mb-3">
+                      My favourite Games
+                    </h1>
+                    <div>
+                      {aboutData?.games.map((game, id) => {
+                        const frameNumber = getRandomInt(1, 3);
+
+                        return (
+                          <NineSliceFrame
+                            key={id}
+                            imagePath="/blue/box1.png"
+                            slice={12}
+                            borderWidth={40}
+                            repeat="repeat"
+                            fill
+                            pixelated
+                            className="flex items-center flex-row p-4 w-full h-fit justify-between"
+                          >
+                            <div className="max-w-40 max-h-40 ">
+                              <ImageFrame
+                                src={game?.img}
+                                frameSrc={`/blue/frame${frameNumber}.png`}
+                                className="w-20 h-20"
+                                img_classname="w-20 h-20 p-2"
+                                borderWidth={10}
+                              />
+                            </div>
+                            <a href={game?.link}>
+                              {" "}
+                              <h1 className=" text-blue-2 text-lg md:text-2xl lg:text-2xl">
+                                {game?.name}
+                              </h1>
+                            </a>
+                            <h1 className="text-xl overflow-wrap">
+                              {aboutData?.rating[String(game?.rating)]}
+                            </h1>
+                          </NineSliceFrame>
+                        );
+                      })}
+                    </div>
+                  </NineSliceFrame>
+                </div>
+                <div className="flex flex-1 flex-col">
+                  <NineSliceFrame
+                    imagePath="/blue/box2.png"
+                    slice={12}
+                    borderWidth={40}
+                    repeat="repeat"
+                    fill
+                    pixelated
+                    className="h-fit min-h-fit w-full flex-1 flex-col items-center justify-center p-5 mb-3"
+                  >
+                    <h1 className="text-4xl text-blue-1 mb-3">My favourite tools</h1>
+                    <div className=" ">
+                      {aboutData?.tools.map((tool, id) => {
+                        const frameNumber = getRandomInt(1, 3);
+
+                        return (
+                          <div onClick={() => {window.location.href = tool?.link}} className="cursor-pointer">
+                            <NineSliceFrame
+                              key={id}
+                              imagePath="/blue/box1.png"
+                              slice={12}
+                              borderWidth={40}
+                              repeat="repeat"
+                              fill
+                              pixelated
+                              className="flex items-center flex-row p-4 w-full h-fit space-x-15"
+                            >
+                              <div className="max-w-40 max-h-40 ">
+                                <ImageFrame
+                                  src={tool?.img}
+                                  frameSrc={`/blue/frame${frameNumber}.png`}
+                                  className="w-20 h-20"
+                                  img_classname="w-20 h-20 p-2"
+                                  borderWidth={10}
+                                />
+                              </div>
+                              <a href={tool?.link}>
+                                {" "}
+                                <h1 className=" text-blue-2 text-lg md:text-2xl lg:text-2xl hover:underline">
+                                  {tool?.name}
+                                </h1>
+                              </a>
+                            </NineSliceFrame>                            
+                          </div>
+
+                        );
+                      })}
+                    </div>
+                  </NineSliceFrame>
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <NineSliceFrame
+                  imagePath="/blue/box1.png"
+                  slice={12}
+                  borderWidth={40}
+                  repeat="repeat"
+                  fill
+                  pixelated
+                  className="h-fit w-full flex flex-col items-center justify-center p-1"
+                >
+                  <h1 className="text-4xl text-blue-1 mb-3">
+                    My favourite Songs
+                  </h1>
+                  <div className="grid gap-3  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-3 ">
+                    {aboutData?.songs.map((song, id) => {
+                      return (
+                        <iframe
+                          data-testid="embed-iframe"
+                          src={song}
+                          width="100%"
+                          height="152"
+                          frameBorder="0"
+                          allowfullscreen=""
+                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                          loading="lazy"
+                          key={id}
+                        ></iframe>
+                      );
+                    })}
+                  </div>
+                </NineSliceFrame>
+              </div>
+            </div>
           </NineSliceFrame>
         </TiledSection>
       </section>
@@ -248,7 +404,7 @@ function Home() {
         <TiledSection
           tileSrc="/red/wall2.png"
           scale={3}
-          className="h-screen w-full flex items-center justify-center flex-col p-4 space-y-5 text-red-3 overflow-y-scroll scrollbar-red-3"
+          className="h-fit w-full min-h-screen flex items-center flex-col p-4 space-y-5 text-red-3"
         >
           {" "}
           <NineSliceFrame
@@ -258,11 +414,10 @@ function Home() {
             repeat="repeat"
             fill
             pixelated
-            className="h-fit w-full flex items-center justify-center mt-44 p-5"
+            className="h-fit w-full flex items-center justify-center p-5"
           >
             <h1 className="text-6xl text-red-1">Contact me</h1>
           </NineSliceFrame>
-          
           <div className="flex flex-col w-full h-full p-3 gap-4 lg:flex-row">
             <NineSliceFrame
               imagePath="/red/box2.png"
@@ -289,9 +444,17 @@ function Home() {
                       className="flex  items-center flex-row p-4 w-full h-fit justify-between"
                     >
                       <div className="max-w-40 max-h-40 ">
-                      <ImageFrame src={contact?.icon} frameSrc={`/red/frame${frameNumber}.png`} className="w-40 h-40" img_classname="w-40 h-40 p-5"/>                        
+                        <ImageFrame
+                          src={contact?.icon}
+                          frameSrc={`/red/frame${frameNumber}.png`}
+                          className="w-20 h-20"
+                          img_classname="w-20 h-20 p-5"
+                          borderWidth={10}
+                        />
                       </div>
-                      <h1 className=" text-red-2 text-lg lg:text-5xl">{contact?.name}</h1>
+                      <h1 className=" text-red-2 text-lg md:text-2xl lg:text-3xl">
+                        {contact?.name}
+                      </h1>
                       <a className="" href={contact?.link}>
                         <NineSliceFrame
                           imagePath="/red/button1.png"
@@ -302,7 +465,7 @@ function Home() {
                           pixelated
                           className="ml-3"
                         >
-                          <p className="p-4 text-red-1">Open</p>
+                          <p className="p-4 text-red-1">{contact?.text}</p>
                         </NineSliceFrame>
                       </a>
                     </NineSliceFrame>

@@ -2,7 +2,7 @@ import { use, useState } from "react";
 import { NineSliceFrame } from "@nine-slice-frame/react";
 
 export default function ContactForm({ url = "", color = "" }) {
-  const [name, setName] = useState<string>("")
+  const [name, setName] = useState<string>("");
   const [content, setContent] = useState<string>("");
   const [contact, setContact] = useState<string>("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
@@ -35,7 +35,7 @@ export default function ContactForm({ url = "", color = "" }) {
         throw new Error(`Discord API returned ${response.status}`);
       }
       setStatus("sent");
-      setName("")
+      setName("");
       setContact("");
       setContent("");
     } catch (err) {
@@ -124,11 +124,7 @@ export default function ContactForm({ url = "", color = "" }) {
           className="h-full w-full"
         >
           <p className={`p-4 text-${color}-1`}>
-            {status === "sending"
-              ? "Sending..."
-              : status === "sent"
-                ? "Sent!"
-                : "Send"}
+            {status === "sending" ? "Sending..." : status === "sent" ? "Sent!" : "Send"}
           </p>
         </NineSliceFrame>
       </button>

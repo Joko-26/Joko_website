@@ -3,27 +3,32 @@
     {
       "name": "Discord",
       "icon": "/icons/discord.png",
-      "link": "https://discordapp.com/users/1012708316973117491"
+      "link": "https://discordapp.com/users/1012708316973117491",
+      "text": "Add me"
     },
     {
       "name": "Github",
       "icon": "/icons/github.png",
-      "link": "https://hackclub.enterprise.slack.com/team/U0A5GJ8JP5F"
+      "link": "https://hackclub.enterprise.slack.com/team/U0A5GJ8JP5F",
+      "text": "Follow me"
     },
     {
       "name": "Slack",
       "icon": "/icons/slack.png",
-      "link": "https://hackclub.enterprise.slack.com/team/U0A5GJ8JP5F"
+      "link": "https://hackclub.enterprise.slack.com/team/U0A5GJ8JP5F",
+      "text": "Add me"
     },
     {
       "name": "instagram",
       "icon": "/icons/instagramm.png",
-      "link": "https://www.instagram.com/jokoone26/"
+      "link": "https://www.instagram.com/jokoone26/",
+      "text": "Follow me"
     },
     {
       "name": "Bluesky",
       "icon": "/icons/bluesky.png",
-      "link": "https://bsky.app/profile/joko-26.bsky.social"
+      "link": "https://bsky.app/profile/joko-26.bsky.social",
+      "text": "Follow me"
     }
   ]
 }
