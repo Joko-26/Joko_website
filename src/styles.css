@@ -63,3 +63,7 @@ body {
   scrollbar-color: --value(--color-*) transparent
   
 }
+
+.max-box {
+ @apply max-w-500
+}
