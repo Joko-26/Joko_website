@@ -17,6 +17,16 @@ To build this application for production:
 npm run build
 ```
 
+## Deploying To GitHub Pages
+
+This project is set up to publish the Vite `dist` folder to the `gh-pages` branch and keep the custom domain `joko26.me`.
+
+```bash
+npm run deploy
+```
+
+That command builds the site first, copies `index.html` to `404.html` for GitHub Pages SPA refreshes, and then publishes the result.
+
 ## Testing
 
 This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:

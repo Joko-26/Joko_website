@@ -7,6 +7,7 @@ import {} from "#/components/tiledSection";
 import ImageFrame from "#/components/imageFrame";
 import { getRandomInt } from "#/utils";
 import ContactForm from "#/components/contactForm";
+import { useScreenSize } from "#/components/useScreenSize";
 
 import projectsData from "#/json/projects.json";
 import contactsData from "#/json/contacts.json";
@@ -16,6 +17,8 @@ export const Route = createFileRoute("/")({ component: Home });
 
 function Home() {
   const [age, setAge] = useState("");
+
+  const screenSize = useScreenSize();
 
   const projects = projectsData?.projects;
   const contacts = contactsData?.contacts;
@@ -47,7 +50,13 @@ function Home() {
           scale={3}
           className="h-fit w-full min-h-screen flex items-center justify-center flex-col p-4 space-y-5"
         >
-          <div className="max-box flex items-center justify-center flex-col">
+          <div className="max-box flex items-center justify-center flex-col space-y-7">
+            {String(screenSize) === "xs" || String(screenSize) === "sm" ? (
+              <img src="/violet/name.gif" alt="" />
+            ) : (
+              <img src="/violet/name-big.gif" alt="" />
+            )}
+
             <NineSliceFrame
               imagePath="/violet/box2.png"
               slice={12}
@@ -55,11 +64,11 @@ function Home() {
               repeat="repeat"
               fill
               pixelated
-              className="h-fit w-fit "
+              className="h-fit w-fit"
             >
               <div className="p-5">
-                <h1 className="text-xl">Hey there</h1>
-                <p>
+                <h1 className="text-5xl">Hey there</h1>
+                <p className="text-xl">
                   My name is Joko26 and im a{" "}
                   <span className="text-violet-1">{age}yr</span> old gamedev and
                   programmer. i mostly use Typescript and React but currently im
@@ -136,7 +145,7 @@ function Home() {
       </section>
       <section id="projects" className="text-green-3">
         {" "}
-        <TiledSection 
+        <TiledSection
           tileSrc="/green/wall2.png"
           scale={3}
           className="h-fit min-h-screen w-full flex items-center flex-col p-4 space-y-5"
@@ -233,7 +242,7 @@ function Home() {
               repeat="repeat"
               fill
               pixelated
-              className="h-fit w-full flex items-center justify-center p-3 mb-3" 
+              className="h-fit w-full flex items-center justify-center p-3 mb-3"
             >
               <h1 className="text-6xl text-blue-1">About</h1>
             </NineSliceFrame>

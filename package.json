@@ -9,6 +9,8 @@
     "dev": "vite dev --port 3000",
     "generate-routes": "tsr generate",
     "build": "vite build",
+    "predeploy": "npm run build && node -e \"const fs=require('node:fs');const path=require('node:path');fs.copyFileSync(path.join('dist','index.html'),path.join('dist','404.html'))\"",
+    "deploy": "gh-pages -d dist --cname joko26.me",
     "preview": "vite preview",
     "test": "vitest run"
   },
@@ -35,6 +37,7 @@
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^6.0.1",
+    "gh-pages": "^6.3.0",
     "jsdom": "^28.1.0",
     "typescript": "^6.0.2",
     "vite": "^8.0.0",
